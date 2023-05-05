@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="Jack Bowman & Alison Mundfrom" name="author">
+    <meta content="This page accepts tree orders" name="description">
+    <title>Get a Quote</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script defer src="scripts.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Bowman Bros. Tree Farm & Landscape</h1>
+</header>
+
+<main>
+    <div id="side_bar">
+        <h3>Navigation</h3>
+        <details open>
+            <summary>
+                <a href="#">Get a Quote</a>
+            </summary>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#quote">Quote</a>
+                    </li>
+                </ul>
+            </nav>
+        </details>
+    </div>
+
+    <div id="content">
+        <article id="quote">
+            <h2>Get a Quote</h2>
+            <form action="mailto:jbbowman@students.unwsp.edu" enctype="text/plain" id="quoteForm" method="post">
+                <fieldset>
+                    <legend>Personal Info</legend>
+                    <p>
+                        <label for="firstName">First Name:</label>
+                        <input autocomplete="on" autofocus id="firstName" name="firstName" placeholder="Jane" required
+                               type="text">
+                    </p>
+                    <p>
+                        <label for="lastName">Last Name:</label>
+                        <input autocomplete="on" id="lastName" name="lastName" placeholder="Doe" required type="text">
+                    </p>
+                    <p>
+                        <label for="streetAddress">Street Address:</label>
+                        <input id="streetAddress" name="streetAddress" placeholder="1234 Oak St." required type="text">
+                    </p>
+                    <p>
+                        <label for="city">City:</label>
+                        <input id="city" name="city" placeholder="Minneapolis" required type="text">
+                    </p>
+                    <p>
+                        <label for="state">State:</label>
+                        <input id="state" maxlength="2" name="state" placeholder="MN" required type="text">
+                    </p>
+                    <p>
+                        <label for="distance">Distance from our facility (miles):</label>
+                        <input id="distance" min="0" name="distance" required type="number">
+                    </p>
+                    <p>
+                        <label for="phone">Phone:</label>
+                        <input id="phone" name="phone" placeholder="5555555555" required type="tel">
+                    </p>
+                    <p>
+                        <label for="email">Email:</label>
+                        <input id="email" name="email" placeholder="youremail@example.com" required type="email">
+                    </p>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Preferred Method of Contact</legend>
+                    <p>
+                        <label for="by_email">Email</label>
+                        <input id="by_email" name="contact_selection" type="radio" value="by_email">
+                    </p>
+                    <p>
+                        <label for="by_phone">Phone</label>
+                        <input id="by_phone" name="contact_selection" type="radio" value="by_phone">
+                    </p>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Order Items</legend>
+                    <div id="itemsContainer"></div>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Send Additional Notes</legend>
+                    <label for="message"></label>
+                    <br>
+                    <textarea cols="30" id="message" name="message" placeholder="Start typing here"
+                              rows="10"></textarea>
+                </fieldset>
+                <br>
+                <button id="calculateTotal" type="button">Calculate Total</button>
+                <p>
+                    <label for="total">Total: $</label>
+                    <input id="total" name="total" readonly type="text">
+                </p>
+                <button type="reset">Reset</button>
+                <button form="quoteForm" formaction="mailto:jbbowman@students.unwsp.edu" formmethod="post"
+                        type="submit">Submit
+                </button>
+            </form>
+        </article>
+    </div>
+</main>
+
+<footer>
+    <hr>
+    <p>
+        &lt;&lt;&lt;<a href="https://sites.google.com/view/treedimensional/">Bowman Bros. Tree Farm & Landscape</a>&gt;&gt;&gt;
+    </p>
+    <p>
+        <a href="#">Back to Top</a>
+    </p>
+</footer>
+
+</body>
+</html>
