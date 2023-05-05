@@ -13,8 +13,7 @@
 }
 
 .product img {
-    height: 65%;
-    width: auto;
+    max-width: 100px;
     margin-bottom: 20px;
 }
 

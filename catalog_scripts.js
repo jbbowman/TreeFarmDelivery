@@ -51,28 +51,32 @@ const products = [
 ];
 
 function generateProductsHtml() {
-    const itemsContainer = document.getElementById("itemsContainer");
+    const productsContainer = document.getElementById("all_products");
     let productsHtml = "";
 
     products.forEach((product) => {
+        let optionsHtml = "";
+        product.height.forEach((height) => {
+            optionsHtml += `<option value="${height}">${height} feet</option>`;
+        });
+
         productsHtml += `
         <div class="product">
             <img alt="Product Image" src="${product.image}">
             <div class="product-info">
                 <h2 class="product-label">${product.label}</h2>
-                <p class="product-price">${product.price}</p>
-                <label for="tree-size">Tree Size:</label>
-                <select id="tree-size" name="tree-size">
-                    <option value="5">5 feet</option>
-                    <option value="6">6 feet</option>
-                    <option value="7">7 feet</option>
-                    <option value="8">8 feet</option>
+                <p class="product-price">${product.price_per_foot * Math.min(...product.height)} - ${product.price_per_foot * Math.max(...product.height)}</p>
+                <label for="tree-size-${product.id}">Tree Size:</label>
+                <select id="tree-size-${product.id}" name="tree-size">
+                    ${optionsHtml}
                 </select>
-                <label for="quantity">Quantity:</label>
-                <input id="quantity" min="1" name="quantity" type="number" value="1">
+                <label for="quantity-${product.id}">Quantity:</label>
+                <input id="quantity-${product.id}" min="1" name="quantity" type="number" value="1">
             </div>
         </div>`;
     });
 
-    itemsContainer.innerHTML = productsHtml;
+    productsContainer.innerHTML = productsHtml;
 }
+
+document.addEventListener("DOMContentLoaded", generateProductsHtml);
