@@ -8,7 +8,7 @@ const products = [
     },
     {
         id: 1,
-        label: "linden Tree",
+        label: "Linden Tree",
         height: [6, 7, 8],
         price_per_foot: 25,
         image: "product_images/linden.jpg",
