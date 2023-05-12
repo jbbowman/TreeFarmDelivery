@@ -64,7 +64,7 @@ function generateProductsHtml() {
                     ${optionsHtml}
                 </select>
                 <label for="quantity-${product.id}">Quantity:</label>
-                <input id="quantity-${product.id}" min="1" name="quantity" type="number" value="1">
+                <input id="quantity-${product.id}" min="0" max="50" name="quantity" type="number" value="0">
             </div>
         </div>`;
     });

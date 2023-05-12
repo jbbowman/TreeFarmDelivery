@@ -101,4 +101,4 @@ function calculateTotal() {
 
 
 document.getElementById("calculateTotal").addEventListener("click", calculateTotal);
-generateItemsHtml();
+document.addEventListener("DOMContentLoaded", generateItemsHtml);
